@@ -2,6 +2,7 @@
 Создание CRUD приложения на Django
  
 Доступ к приложению:
+
 Основное приложение: http://localhost:8000
 Админка: http://localhost:8000/admin
 База данных: localhost:5432
