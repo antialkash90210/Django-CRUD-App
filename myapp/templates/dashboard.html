@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="container">
+            <h2>Welcome to the Dashboard</h2>
+            <p>Hello, {{ user.username }}!</p>
+        <a href="{% url 'create_item' %}" class="btn btn-success">Create New Item</a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in items %}
+                <tr>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.description }}</td>
+                    <td>
+                        <a href="{% url 'update_item' item.id %}" class="btn btn-info">Edit</a>
+                        <a href="{% url 'delete_item' item.id %}" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="{% url 'logout' %}" class="btn btn-danger">Logout</a>
+
+    </div>
+</body>
+</html>
+
+
+
